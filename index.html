@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="theme-color" content="#07070a">
+  <title>EmbedStudio — Premium Video Embed Builder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+
+  <nav class="nav">
+    <a class="brand" href="#">
+      <span class="brand-mark">▶</span>
+      <span>Embed<span>Studio</span></span>
+    </a>
+    <div class="nav-actions">
+      <button class="ghost" id="docsBtn">Guide</button>
+      <button class="primary small" id="previewTop">Live Preview</button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span></span> PREMIUM EMBED BUILDER</div>
+      <h1>Turn your video into a<br><em>beautiful player.</em></h1>
+      <p>Paste an authorized video or iframe URL, customize the presentation, and generate a clean responsive embed.</p>
+      <div class="hero-pills">
+        <span>⚡ No backend</span><span>◈ Live preview</span><span>⌁ Responsive</span>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <aside class="panel settings">
+        <div class="panel-head">
+          <div>
+            <small>PLAYER CONFIG</small>
+            <h2>Build your embed</h2>
+          </div>
+          <span class="step">01</span>
+        </div>
+
+        <label>Movie / Video title</label>
+        <input id="title" type="text" placeholder="My Video" value="My Video">
+
+        <label>Poster image <span class="muted">(optional)</span></label>
+        <input id="poster" type="url" placeholder="https://example.com/poster.jpg">
+
+        <label>Video / iframe URL</label>
+        <textarea id="source" rows="3" placeholder="https://your-authorized-player.example/embed/..."></textarea>
+        <div class="hint">Use a source you own or have permission to embed.</div>
+
+        <label>Player ratio</label>
+        <div class="segmented">
+          <button class="active" data-ratio="16/9">16 : 9</button>
+          <button data-ratio="4/3">4 : 3</button>
+          <button data-ratio="1/1">1 : 1</button>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="option-row">
+          <div><b>Rounded player</b><span>Soft cinematic corners</span></div>
+          <label class="switch"><input id="rounded" type="checkbox" checked><i></i></label>
+        </div>
+        <div class="option-row">
+          <div><b>Shadow</b><span>Elevated player effect</span></div>
+          <label class="switch"><input id="shadow" type="checkbox" checked><i></i></label>
+        </div>
+
+        <button class="generate" id="generate">Generate Player <span>→</span></button>
+      </aside>
+
+      <section class="preview-col">
+        <div class="preview-head">
+          <div>
+            <small>LIVE CANVAS</small>
+            <h2>Player preview</h2>
+          </div>
+          <div class="status"><span></span> LIVE</div>
+        </div>
+
+        <div class="player-shell" id="playerShell">
+          <div class="empty" id="emptyState">
+            <div class="play-orb">▶</div>
+            <h3>Your player appears here</h3>
+            <p>Add your authorized embed URL and click Generate Player.</p>
+          </div>
+          <iframe id="frame" title="Video preview" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div class="meta-card">
+          <div class="poster-mini" id="posterMini"><span>▶</span></div>
+          <div class="meta-text">
+            <small>NOW PREVIEWING</small>
+            <h3 id="previewTitle">My Video</h3>
+            <p>Responsive embed player</p>
+          </div>
+          <button class="icon-btn" id="fullscreenBtn" title="Fullscreen">⛶</button>
+        </div>
+
+        <div class="code-card">
+          <div class="code-head">
+            <div><small>EMBED CODE</small><h3>Ready to paste</h3></div>
+            <button class="copy" id="copyBtn">Copy code</button>
+          </div>
+          <pre id="codeOutput"><code>&lt;!-- Generate a player to create your embed code --&gt;</code></pre>
+        </div>
+      </section>
+    </section>
+
+    <section class="guide" id="guide">
+      <div>
+        <small>HOW IT WORKS</small>
+        <h2>Three steps.<br><em>One polished player.</em></h2>
+      </div>
+      <div class="steps">
+        <article><b>01</b><h3>Add your source</h3><p>Paste a video URL or authorized iframe source.</p></article>
+        <article><b>02</b><h3>Customize</h3><p>Choose your title, poster, ratio and visual options.</p></article>
+        <article><b>03</b><h3>Embed anywhere</h3><p>Copy the generated responsive iframe snippet.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>EmbedStudio <span>•</span> Built for authorized content</footer>
+  <script src="app.js"></script>
+</body>
+</html>
